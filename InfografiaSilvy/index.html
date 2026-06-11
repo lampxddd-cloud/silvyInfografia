@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infografia Silvy</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde-oscuro: #1a4a2e;
+    --verde-medio: #2d7a4f;
+    --verde-claro: #7ec8a0;
+    --verde-menta: #c8ead8;
+    --verde-fondo: #e8f5ee;
+    --blanco: #ffffff;
+    --texto: #1a3a25;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #b8d8c8;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 30px 16px;
+    min-height: 100vh;
+  }
+
+  .infografia {
+    width: 520px;
+    background: var(--verde-fondo);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--verde-oscuro);
+    padding: 28px 24px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before,
+  .header::after {
+    content: '🌿';
+    position: absolute;
+    font-size: 40px;
+    opacity: 0.35;
+  }
+  .header::before { top: 8px; left: 10px; transform: rotate(-20deg); }
+  .header::after  { top: 8px; right: 10px; transform: rotate(20deg) scaleX(-1); }
+
+  .header .eyebrow {
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--verde-claro);
+    margin-bottom: 6px;
+  }
+  .header h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 46px;
+    line-height: 1.05;
+    color: #7edba0;
+    text-shadow: 2px 3px 0 rgba(0,0,0,0.3);
+  }
+  .header h1 span {
+    display: block;
+    font-size: 26px;
+    color: var(--blanco);
+    letter-spacing: 1px;
+  }
+  .header .tagline {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #b0d8c0;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  /* leaf strip */
+  .leaf-strip {
+    background: var(--verde-medio);
+    padding: 8px 0;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    font-size: 22px;
+    letter-spacing: 4px;
+  }
+
+  /* ── QUÉ ES SILVY ── */
+  .que-es {
+    display: flex;
+    gap: 18px;
+    padding: 22px 22px;
+    align-items: center;
+    border-bottom: 1px solid #cde8d8;
+    background: var(--verde-menta);
+  }
+  .que-es .logo-wrap {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 18px;
+    background: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    overflow: hidden;
+    padding: 6px;
+  }
+  .que-es .logo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .que-es .body { flex: 1; }
+  .que-es .body .badge {
+    display: inline-block;
+    background: var(--verde-medio);
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .que-es .body h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 24px;
+    color: var(--verde-oscuro);
+    margin-bottom: 6px;
+  }
+  .que-es .body p {
+    font-size: 13px;
+    line-height: 1.65;
+    color: #2a4a35;
+    font-weight: 600;
+  }
+
+  /* ── PREVENCIÓN 72H ── */
+  .prevencion {
+    background: var(--verde-oscuro);
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    border-bottom: none;
+  }
+  .prevencion .icon-big { font-size: 48px; }
+  .prevencion .pill {
+    background: #4cdb8c;
+    color: var(--verde-oscuro);
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+    padding: 10px 22px;
+    border-radius: 40px;
+    display: inline-block;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  }
+  .prevencion p {
+    color: #c8ead8;
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.65;
+    max-width: 380px;
+  }
+
+  /* ── SENSORES ── */
+  .sensores {
+    background: var(--blanco);
+    padding: 22px 22px 18px;
+    border-bottom: 1px solid #cde8d8;
+  }
+  .sensores h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 22px;
+    color: var(--verde-oscuro);
+    margin-bottom: 14px;
+  }
+  .sensor-list { display: flex; flex-direction: column; gap: 10px; }
+  .sensor-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--verde-menta);
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .sensor-check {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    background: var(--verde-medio);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 15px; font-weight: 900;
+  }
+  .sensor-item p { font-size: 13px; font-weight: 700; color: var(--texto); line-height: 1.5; }
+  .sensor-item strong { color: var(--verde-oscuro); }
+
+  /* ── ALERTAS EMOCIONALES ── */
+  .alertas {
+    background: var(--verde-menta);
+    padding: 22px 22px;
+    border-bottom: 1px solid #cde8d8;
+  }
+  .alertas h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 22px;
+    color: var(--verde-oscuro);
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .alertas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .alerta-card {
+    background: var(--blanco);
+    border-radius: 14px;
+    padding: 14px 12px 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-top: 4px solid var(--verde-claro);
+    transition: transform 0.2s;
+  }
+  .alerta-card:hover { transform: translateY(-3px); }
+
+  /* imagen de cara */
+  .alerta-card .cara {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 8px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f0f8f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .alerta-card .cara img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  /* fallback emoji si imagen no carga */
+  .alerta-card .cara-fallback {
+    font-size: 36px;
+    display: none;
+  }
+
+  .alerta-card .nombre {
+    font-family: 'Fredoka One', cursive;
+    font-size: 17px;
+    color: var(--verde-oscuro);
+    margin-bottom: 4px;
+  }
+  .alerta-card .accion {
+    font-size: 12px;
+    font-weight: 700;
+    color: #4a7a5a;
+    line-height: 1.4;
+  }
+
+  .alerta-card.zen     { border-color: #7edba0; }
+  .alerta-card.feliz   { border-color: #4caf7d; }
+  .alerta-card.curiosa { border-color: #a8d5b8; }
+  .alerta-card.enojada { border-color: #e07b4a; }
+  .alerta-card.mareada { border-color: #5ba8d8; }
+  .alerta-card.morido  { border-color: #d84a4a; }
+
+  /* ── PERSONIFICACIÓN ── */
+  .personificacion {
+    display: flex;
+    gap: 16px;
+    padding: 22px 22px;
+    align-items: flex-start;
+    border-bottom: 1px solid #cde8d8;
+    background: var(--blanco);
+  }
+  .personificacion .section-icon {
+    flex-shrink: 0;
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--verde-oscuro);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .personificacion .section-body h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+    color: var(--verde-oscuro);
+    margin-bottom: 6px;
+  }
+  .personificacion .section-body p {
+    font-size: 13px;
+    line-height: 1.65;
+    color: #2a4a35;
+    font-weight: 600;
+  }
+  .personificacion .badge {
+    display: inline-block;
+    background: var(--verde-medio);
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── COMPROMISO ── */
+  .compromiso {
+    background: var(--verde-menta);
+    padding: 22px 22px;
+    border-bottom: 1px solid #cde8d8;
+    text-align: center;
+  }
+  .compromiso h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 22px;
+    color: var(--verde-oscuro);
+    margin-bottom: 10px;
+  }
+  .compromiso p {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #2a4a35;
+    font-weight: 600;
+  }
+  .compromiso .frase {
+    margin-top: 12px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 15px;
+    color: var(--verde-medio);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--verde-oscuro);
+    padding: 22px 24px;
+    text-align: center;
+  }
+  .footer .logo-footer {
+    width: 100px;
+    height: auto;
+    margin: 0 auto 6px;
+    display: block;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+  .footer .logo-text {
+    font-family: 'Fredoka One', cursive;
+    font-size: 36px;
+    color: #7edba0;
+    text-shadow: 1px 2px 0 rgba(0,0,0,0.3);
+    margin-bottom: 4px;
+  }
+  .footer .sub {
+    font-size: 12px;
+    font-weight: 700;
+    color: #a0c8b4;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .footer .leaves {
+    font-size: 22px;
+    margin-top: 8px;
+    opacity: 0.55;
+  }
+
+  @media (max-width: 540px) {
+    .infografia { width: 100%; border-radius: 16px; }
+    .header h1 { font-size: 36px; }
+    .alerta-card .cara { width: 60px; height: 60px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="infografia">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="eyebrow">Little Garden Presenta</div>
+    <h1>
+      <span>El Lenguaje Emocional de tus Plantas</span>
+      Silvy
+    </h1>
+    <p class="tagline">Tecnología que reconecta al humano urbano con la naturaleza</p>
+  </div>
+
+  <div class="leaf-strip">🌿🌱🌿🌱🌿🌱🌿</div>
+
+  <!-- QUÉ ES SILVY -->
+  <div class="que-es">
+    <div class="logo-wrap">
+      <img src="logo_silvy.jpeg" alt="Logo Silvy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+      <span style="display:none; font-size:42px;">🌱</span>
+    </div>
+    <div class="body">
+      <div class="badge">¿Qué es?</div>
+      <h2>Silvy</h2>
+      <p>Un sistema de <strong>hardware y firmware</strong> que procesa variables biológicas críticas de tus plantas, sin necesidad de usar pantallas de teléfonos inteligentes. Un ser con voz visual.</p>
+    </div>
+  </div>
+
+  <!-- PREVENCIÓN 72H -->
+  <div class="prevencion">
+    <div class="icon-big">⏱️</div>
+    <div class="pill">¡Prevención con 72h de anticipación!</div>
+    <p>Con el cuidado tradicional, los signos de deterioro aparecen tarde y el daño ya está avanzado. Silvy elimina esa brecha y permite que <strong style="color:#7edba0">cualquier persona mantenga sus plantas saludables sin esfuerzo</strong>.</p>
+  </div>
+
+  <!-- SENSORES -->
+  <div class="sensores">
+    <h2>¿Cómo funciona?</h2>
+    <div class="sensor-list">
+      <div class="sensor-item">
+        <div class="sensor-check">✓</div>
+        <p><strong>Sensor BME680:</strong> Mide compuestos orgánicos y gases asociados al estrés de la planta.</p>
+      </div>
+      <div class="sensor-item">
+        <div class="sensor-check">✓</div>
+        <p><strong>Sensor Capacitivo (Sustrato):</strong> Monitorea el porcentaje de humedad directo en las raíces.</p>
+      </div>
+      <div class="sensor-item">
+        <div class="sensor-check">✓</div>
+        <p><strong>Matriz de Procesamiento:</strong> Compara datos del aire y la tierra en tiempo real para evaluar condiciones ambientales.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALERTAS EMOCIONALES -->
+  <div class="alertas">
+    <h2>Alertas Clave de su Interfaz Emocional</h2>
+    <div class="alertas-grid">
+
+      <div class="alerta-card zen">
+        <div class="cara">
+          <img src="zen.png" alt="Silvy Zen" onerror="this.style.display='none'; this.parentElement.querySelector('.cara-fallback').style.display='block'">
+          <span class="cara-fallback">😌</span>
+        </div>
+        <div class="nombre">Zen</div>
+        <div class="accion">Entorno perfecto.<br>No intervenir.</div>
+      </div>
+
+      <div class="alerta-card feliz">
+        <div class="cara">
+          <img src="feliz.png" alt="Silvy Feliz" onerror="this.style.display='none'; this.parentElement.querySelector('.cara-fallback').style.display='block'">
+          <span class="cara-fallback">😊</span>
+        </div>
+        <div class="nombre">Feliz</div>
+        <div class="accion">Entorno estable.<br>No intervenir.</div>
+      </div>
+
+      <div class="alerta-card curiosa">
+        <div class="cara">
+          <img src="curiosos.png" alt="Silvy Curiosa" onerror="this.style.display='none'; this.parentElement.querySelector('.cara-fallback').style.display='block'">
+          <span class="cara-fallback">🤔</span>
+        </div>
+        <div class="nombre">Curiosa</div>
+        <div class="accion">Cambio leve en el ambiente.<br>Ventile.</div>
+      </div>
+
+      <div class="alerta-card enojada">
+        <div class="cara">
+          <img src="enojado.png" alt="Silvy Enojada" onerror="this.style.display='none'; this.parentElement.querySelector('.cara-fallback').style.display='block'">
+          <span class="cara-fallback">😠</span>
+        </div>
+        <div class="nombre">Enojada</div>
+        <div class="accion">Aire viciado o gases.<br>Ventila el área.</div>
+      </div>
+
+      <div class="alerta-card mareada">
+        <div class="cara">
+          <img src="mareados.png" alt="Silvy Mareada" onerror="this.style.display='none'; this.parentElement.querySelector('.cara-fallback').style.display='block'">
+          <span class="cara-fallback">🥴</span>
+        </div>
+        <div class="nombre">Mareada</div>
+        <div class="accion">Exceso de agua.<br>Suspenda el riego.</div>
+      </div>
+
+      <div class="alerta-card morido">
+        <div class="cara">
+          <img src="morida.png" alt="Silvy Peligro" onerror="this.style.display='none'; this.parentElement.querySelector('.cara-fallback').style.display='block'">
+          <span class="cara-fallback">🚨</span>
+        </div>
+        <div class="nombre">Peligro</div>
+        <div class="accion">Peligro crítico.<br>¡Riegue de inmediato!</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PERSONIFICACIÓN -->
+  <div class="personificacion">
+    <div class="section-icon">💡</div>
+    <div class="section-body">
+      <div class="badge">Innovación</div>
+      <h2>Personificación Tecnológica</h2>
+      <p>Silvy convierte un objeto estático en un <strong>ser con voz visual</strong>, facilitando decisiones de cuidado preventivo óptimas sin requerir conocimientos botánicos previos.</p>
+    </div>
+  </div>
+
+  <!-- COMPROMISO -->
+  <div class="compromiso">
+    <h2>🌱 Nuestro Compromiso</h2>
+    <p>Buscamos un equilibrio ideal: un entorno donde la tecnología de precisión sirva activamente a la protección de la vida orgánica.</p>
+    <div class="frase">Democratizando la horticultura, un cubo a la vez 🌿</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <img src="logo_silvy.png" alt="Silvy" class="logo-footer" onerror="this.style.display='none'; document.querySelector('.logo-text').style.display='block'">
+    <div class="logo-text" style="display:none;">Silvy</div>
+    <div class="sub">Little Garden · El lenguaje emocional de tus plantas</div>
+    <div class="leaves">🌿🌱🌿</div>
+  </div>
+
+</div>
+
+</body>
+</html>
